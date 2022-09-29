@@ -8,11 +8,10 @@ var combineUpperSpecial = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"
 var combineUpperLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var combineSpecialLower = ["!", "#", "$", "%", "&", "(", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "~", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var combineAll = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "!", "#", "$", "%", "&", "(", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "~", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-
 // Write password to the #password input
   function writePassword() {
   //var password = generatePassword(); //generatePassword function is recommendation
-  var password = "test";// might want it to be a return
+  var password = "" //empty string allows everything to be visible // might want it to be a return  I need test to now be my console.log in my for loop functions
   var passwordText = document.querySelector("#password");
 
   var passwordLength = prompt("How many characters would you like your password to be?");
@@ -29,51 +28,48 @@ var combineAll = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M
   if (confirmUpper === true && confirmLower === true && confirmSpecial === true){
     function shuffleAll(){
     for (var i = 0; i < passwordLength; i++){
-      //combineAll[Math.floor(Math.random() * combineAll.length)];
-      console.log(combineAll[Math.floor(Math.random() * combineAll.length)]);//passwordText = randomized;
+      password = password + combineAll[Math.floor(Math.random() * combineAll.length)];
+      //console.log(combineAll[Math.floor(Math.random() * combineAll.length)])
+
+      //return combineAll[Math.floor(Math.random() * combineAll.length)];//passwordText = randomized;
     }
   }
     shuffleAll();
     //passwordText.value = math.floor(math.random(combineAll) * combineAll.length);
   }
   else if (confirmUpper === true && confirmLower === true && confirmSpecial === false){
-    console.log(combineUpperLower);
+    //console.log(combineUpperLower) used these console logs to test the system as I built;
+    function shuffleUpperLower(){
+      for (var i = 0; i < passwordLength; i++){
+        password = password + combineUpperLower[Math.floor(Math.random() * combineUpperLower.length)];
+      }
+    }
+    shuffleUpperLower();
   }
   else if (confirmUpper === true && confirmSpecial === true && confirmLower === false){
-    console.log(combineUpperSpecial);
+    //console.log(combineUpperSpecial)-;
+    function shuffleUpperSpecial(){
+      for (var i = 0; i < passwordLength; i++){
+        password = password + combineUpperSpecial[Math.floor(Math.random() * combineUpperSpecial.length)];
+        console.log(combineUpperSpecial[Math.floor(Math.random() * combineUpperSpecial.length)]);
+      }
+    }
+    shuffleUpperSpecial();
   }
   else if (confirmUpper === false && confirmLower === true && confirmSpecial === true){
-    console.log(combineSpecialLower);
+    //console.log(combineSpecialLower);
+    function shuffleSpecialLower(){
+      for (var i = 0; i < passwordLength; i++){
+        password = password + combineSpecialLower[Math.floor(Math.random() * combineSpecialLower.length)];
+      }
+    }
+    shuffleSpecialLower();
   }
   else {
     alert("You must select AT LEAST one criteria to receive password!!");
     return;
   }
-  //function passwordRequirements(passwordLength){
-       /* if (passwordLength > 8 && passwordLength < 121){
-          password.length = passwordLength;
-        }
-        else{
-          alert("Password must be between 8 and 121 characters long!!");
-          return;
-        }*/
-for (var i = 0; i < passwordLength; i++)
   
-  
-  /*if (passwordLength > 8 && passwordLength <121){
-    return ;
-    else{
-      alert("Password must be greater than 8 character but less than 121");
-    }
-  }
-  
-  
-  
-  if(confirmUpper === true){
-
-  }*/
-
-
   passwordText.value = password;
 
 }
