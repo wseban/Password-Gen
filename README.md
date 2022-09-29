@@ -28,9 +28,10 @@ The purpose of this project was to utilize our skills with JavaScript to take th
 NA
 
 ## Lessons Learned
-The most effective lessons learned for me are visible through the below "Code Snippet".
+The most effective lessons learned for me were...
 1. Learning how to effectively code randomizing an array using Math.floor and understanding what it did for Math.random.  
-2. Upon nearly completing the project I was still getting one random integer but I knew it was running my loop the correct amount of times.  I learned that adding that integer to the password creating in the previous loop would give me my desired outcome.  I believe this took me viewing different scope levels and logically talking out what was happening from the code.
+2. Upon nearly completing the project I was still getting one random integer but I knew it was running my loop the correct amount of times.  I learned that adding that integer to the password creating in the previous loops would give me my desired outcome.  I believe this took me viewing different scope levels and logically talking out what was happening from the code.
+(See below code snippets)
 
 ## Code Snippets
 JavaScript
