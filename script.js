@@ -121,10 +121,43 @@ var combineAll = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M
         password = password + combineLowerNum[Math.floor(Math.random() * combineSpecialLower.length)];
       }
     }
-    shuffleLowerNum();
+    shuffleLowerNum()
+  }
+    else if (confirmUpper === true && confirmLower === false && confirmSpecial === false && confirmNumeric === false){
+      function shuffleUpper(){  
+      for (var i = 0; i < passwordLength; i++){
+          password = password + upperCase[Math.floor(Math.random() * upperCase.length)];
+        }
+      }
+      shuffleUpper();
+    }
+    else if (confirmUpper === false && confirmSpecial === true && confirmLower === false && confirmNumeric === false){
+      
+      function shuffleSpecial(){
+        for (var i = 0; i < passwordLength; i++){
+          password = password + special[Math.floor(Math.random() * special.length)];
+        }
+      }
+      shuffleSpecial();
+    }
+    else if (confirmUpper === false && confirmLower === true && confirmSpecial === false && confirmNumeric === false){
+      function shuffleLower(){
+        for (var i = 0; i < passwordLength; i++){
+          password = password + lowerCase[Math.floor(Math.random() * lowerCase.length)];
+        }
+      }
+    shuffleLower();
   } 
+  else if (confirmUpper === false && confirmLower === false && confirmSpecial === false && confirmNumeric === true){
+    function shuffleNum(){
+      for (var i = 0; i < passwordLength; i++){
+        password = password + numeric[Math.floor(Math.random() * numeric.length)];
+      }
+    }
+  shuffleNum();
+} 
   else {
-    alert("You must select AT LEAST two criteria to receive password!!");
+    alert("You must select AT LEAST ONE criteria to receive password!!");
     return;
   }
   
