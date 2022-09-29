@@ -36,7 +36,6 @@ The most effective lessons learned for me are visible through the below "Code Sn
 JavaScript
 ```javaScript
 else if (confirmUpper === true && confirmSpecial === true && confirmLower === false && confirmNumeric ===false){
-    //console.log(combineUpperSpecial)-;
     function shuffleUpperSpecial(){
       for (var i = 0; i < passwordLength; i++){
         password = password + combineUpperSpecial[Math.floor(Math.random() * combineUpperSpecial.length)];
