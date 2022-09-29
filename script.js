@@ -4,10 +4,17 @@ var generateBtn = document.querySelector("#generate");
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var special = ["!", "#", "$", "%", "&", "(", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "~"];
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var numeric = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var combineSpecialNum = ["!", "#", "$", "%", "&", "(", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "~", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var combineUpperNum = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var combineLowerNum = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var combineUpperSpecial = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "!", "#", "$", "%", "&", "(", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "~"];
+var combineUpperSpecialNum = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "!", "#", "$", "%", "&", "(", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "~"];
 var combineUpperLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var combineUpperLowerNum = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var combineSpecialLower = ["!", "#", "$", "%", "&", "(", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "~", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var combineAll = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "!", "#", "$", "%", "&", "(", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "~", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var combineSpecialLowerNum = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "!", "#", "$", "%", "&", "(", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "~", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var combineAll = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "!", "#", "$", "%", "&", "(", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "~", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 // Write password to the #password input
   function writePassword() {
   //var password = generatePassword(); //generatePassword function is recommendation
@@ -25,7 +32,8 @@ var combineAll = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M
   var confirmUpper = confirm("Would you like your password to contain upper case letters?");
   var confirmLower = confirm("Would you like your password to contain lower case letter?");
   var confirmSpecial = confirm("Would you like your password to have special characters?");
-  if (confirmUpper === true && confirmLower === true && confirmSpecial === true){
+  var confirmNumeric = confirm("Would you like your password to include numbers?"); 
+  if (confirmUpper === true && confirmLower === true && confirmSpecial === true && confirmNumeric === true){
     function shuffleAll(){
     for (var i = 0; i < passwordLength; i++){
       password = password + combineAll[Math.floor(Math.random() * combineAll.length)];
@@ -37,7 +45,7 @@ var combineAll = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M
     shuffleAll();
     //passwordText.value = math.floor(math.random(combineAll) * combineAll.length);
   }
-  else if (confirmUpper === true && confirmLower === true && confirmSpecial === false){
+  else if (confirmUpper === true && confirmLower === true && confirmSpecial === false && confirmNumeric === false){
     //console.log(combineUpperLower) used these console logs to test the system as I built;
     function shuffleUpperLower(){
       for (var i = 0; i < passwordLength; i++){
@@ -46,7 +54,7 @@ var combineAll = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M
     }
     shuffleUpperLower();
   }
-  else if (confirmUpper === true && confirmSpecial === true && confirmLower === false){
+  else if (confirmUpper === true && confirmSpecial === true && confirmLower === false && confirmNumeric ===false){
     //console.log(combineUpperSpecial)-;
     function shuffleUpperSpecial(){
       for (var i = 0; i < passwordLength; i++){
@@ -56,7 +64,7 @@ var combineAll = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M
     }
     shuffleUpperSpecial();
   }
-  else if (confirmUpper === false && confirmLower === true && confirmSpecial === true){
+  else if (confirmUpper === false && confirmLower === true && confirmSpecial === true && confirmNumeric === false){
     //console.log(combineSpecialLower);
     function shuffleSpecialLower(){
       for (var i = 0; i < passwordLength; i++){
@@ -65,8 +73,58 @@ var combineAll = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M
     }
     shuffleSpecialLower();
   }
+  else if (confirmUpper === true && confirmLower === true && confirmSpecial === false && confirmNumeric === true){
+    function shuffleUpperLowerNum(){  
+    for (var i = 0; i < passwordLength; i++){
+        password = password + combineUpperLowerNum[Math.floor(Math.random() * combineUpperLowerNum.length)];
+      }
+    }
+    shuffleUpperLowerNum();
+  }
+  else if (confirmUpper === true && confirmSpecial === true && confirmLower === false && confirmNumeric === true){
+    
+    function shuffleUpperSpecialNum(){
+      for (var i = 0; i < passwordLength; i++){
+        password = password + combineUpperSpecialNum[Math.floor(Math.random() * combineUpperSpecial.length)];
+      }
+    }
+    shuffleUpperSpecialNum();
+  }
+  else if (confirmUpper === false && confirmLower === true && confirmSpecial === true && confirmNumeric === true){
+    function shuffleSpecialLowerNum(){
+      for (var i = 0; i < passwordLength; i++){
+        password = password + combineSpecialLowerNum[Math.floor(Math.random() * combineSpecialLower.length)];
+      }
+    }
+    shuffleSpecialLowerNum();
+  }
+  else if (confirmUpper === true && confirmLower === false && confirmSpecial === false && confirmNumeric === true){
+    function shuffleUpperNum(){  
+    for (var i = 0; i < passwordLength; i++){
+        password = password + combineUpperNum[Math.floor(Math.random() * combineUpperLowerNum.length)];
+      }
+    }
+    shuffleUpperNum();
+  }
+  else if (confirmUpper === false && confirmSpecial === true && confirmLower === false && confirmNumeric === true){
+    
+    function shuffleSpecialNum(){
+      for (var i = 0; i < passwordLength; i++){
+        password = password + combineSpecialNum[Math.floor(Math.random() * combineUpperSpecial.length)];
+      }
+    }
+    shuffleSpecialNum();
+  }
+  else if (confirmUpper === false && confirmLower === true && confirmSpecial === false && confirmNumeric === true){
+    function shuffleLowerNum(){
+      for (var i = 0; i < passwordLength; i++){
+        password = password + combineLowerNum[Math.floor(Math.random() * combineSpecialLower.length)];
+      }
+    }
+    shuffleLowerNum();
+  } 
   else {
-    alert("You must select AT LEAST one criteria to receive password!!");
+    alert("You must select AT LEAST two criteria to receive password!!");
     return;
   }
   
